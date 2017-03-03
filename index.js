@@ -3,7 +3,6 @@ module.exports = {
   rules: {
     // Override stylelint-config-standard:
     indentation: 4,
-    'number-leading-zero': 'never',
 
     // Extend with more strict rules:
     'at-rule-no-vendor-prefix': true,
