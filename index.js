@@ -47,6 +47,7 @@ module.exports = {
     ],
     'selector-no-id': true,
     'selector-no-universal': true,
+    'selector-no-qualifying-type': true,
     'selector-no-vendor-prefix': true,
     'value-no-vendor-prefix': true,
   },
