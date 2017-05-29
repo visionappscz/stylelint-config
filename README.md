@@ -7,5 +7,13 @@
 
 VisionApps' shareable config for [stylelint](https://github.com/stylelint/stylelint).
 
-Extends [stylelint-config-standard](https://github.com/stylelint/stylelint-config-standard) with
-[more strict rules](./index.js).
+This config extends [stylelint-config-standard](https://github.com/stylelint/stylelint-config-standard) with 
+[more strict rules](./index.js). It requires [stylelint](https://github.com/stylelint/stylelint).
+
+1. Install `stylelint`
+
+    ```sh
+    $ yarn add stylelint --dev
+    ```
+
+2. Add `"extends": "stylelint-config-visionapps"` to your `.stylelintrc` file
