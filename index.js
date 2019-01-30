@@ -1,23 +1,24 @@
 module.exports = {
   extends: 'stylelint-config-standard',
   rules: {
-    // Override stylelint-config-standard:
+    // Override stylelint-config-standard
     indentation: 4,
 
-    // Extend with more strict rules:
-    'at-rule-no-vendor-prefix': true,
+    // Extend with more strict rules
+    // (Disable ESlint as we intentionally break alphabetical order rule here.)
+    'at-rule-no-vendor-prefix': true, // eslint-disable-line sort-keys
     'declaration-no-important': true,
     'declaration-property-value-blacklist': [
       {
-        '/^transition/': [
-          '/all/',
-        ],
         '/^background/': [
           'http:',
           'https:',
         ],
         '/^border/': [
           'none',
+        ],
+        '/^transition/': [
+          '/all/',
         ],
       },
       {
@@ -37,15 +38,15 @@ module.exports = {
     'property-no-vendor-prefix': true,
     'selector-attribute-quotes': 'always',
     'selector-max-compound-selectors': 3,
+    'selector-max-id': 0,
     'selector-max-specificity': '0,4,0',
+    'selector-max-universal': 0,
     'selector-nested-pattern': [
       '^&:',
       {
         message: 'Only pseudo-classes and pseudo-elements can be nested (selector-nested-pattern)',
       },
     ],
-    'selector-max-id': 0,
-    'selector-max-universal': 0,
     'selector-no-qualifying-type': true,
     'selector-no-vendor-prefix': true,
     'value-no-vendor-prefix': true,

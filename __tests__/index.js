@@ -1,6 +1,6 @@
-const config = require('../');
 const fs = require('fs');
 const stylelint = require('stylelint');
+const config = require('../');
 
 const validCss = fs.readFileSync('./__tests__/css-valid.css', 'utf-8');
 const invalidCss = fs.readFileSync('./__tests__/css-invalid.css', 'utf-8');
