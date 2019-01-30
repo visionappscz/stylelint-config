@@ -21,16 +21,16 @@
     "stylelint-config-standard": "^18.2.0"
   },
   "devDependencies": {
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-plugin-import": "^2.11.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.7.0",
-    "jest": "^22.4.3",
-    "stylelint": "^9.2.0"
+    "@visionappscz/eslint-config-visionapps": "^1.0.0",
+    "eslint": "^5.6.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "jest": "^24.0.0",
+    "stylelint": "^9.10.1"
   },
   "peerDependencies": {
-    "stylelint": "^9.2.0"
+    "stylelint": "^9.0.0"
   },
   "scripts": {
     "lint": "eslint . --ignore-path .gitignore",
@@ -40,7 +40,7 @@
   },
   "eslintConfig": {
     "extends": [
-      "airbnb"
+      "@visionappscz/eslint-config-visionapps"
     ],
     "env": {
       "es6": true,
