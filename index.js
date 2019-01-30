@@ -37,7 +37,7 @@ module.exports = {
     'property-no-vendor-prefix': true,
     'selector-attribute-quotes': 'always',
     'selector-max-compound-selectors': 3,
-    'selector-max-specificity': '0,3,0',
+    'selector-max-specificity': '0,4,0',
     'selector-nested-pattern': [
       '^&:',
       {
