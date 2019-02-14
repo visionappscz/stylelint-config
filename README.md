@@ -50,16 +50,22 @@ checks at rules:
     "at-rule-no-unknown": [
       true, {
         "ignoreAtRules": [
+          "at-root",
           "content",
+          "debug",
           "each",
           "else",
           "else if",
           "error",
+          "extend",
+          "for",
           "function",
           "if",
           "include",
           "mixin",
-          "return"
+          "return",
+          "warn",
+          "while"
         ]
       }
     ]
