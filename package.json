@@ -22,24 +22,20 @@
     "index.js"
   ],
   "engines": {
-    "node": ">=8.7.0"
+    "node": ">=12.18.3"
   },
   "dependencies": {
-    "stylelint-config-standard": "^18.3.0"
+    "stylelint-config-standard": "^20.0.0"
   },
   "devDependencies": {
-    "@visionappscz/eslint-config-visionapps": "^1.1.2",
-    "eslint": "^6.4.0",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-plugin-import": "^2.18.2",
+    "@visionappscz/eslint-config-visionapps": "^1.2.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.14.3",
-    "eslint-plugin-react-hooks": "^2.0.1",
-    "jest": "^24.9.0",
-    "stylelint": "^10.1.0"
-  },
-  "peerDependencies": {
-    "stylelint": "^10.1.0"
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react-hooks": "^2.5.0",
+    "jest": "^26.2.2",
+    "stylelint": "^13.6.1"
   },
   "scripts": {
     "lint": "eslint . --ignore-path .gitignore",
