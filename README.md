@@ -34,7 +34,7 @@ Apply the config in your Stylelint config:
 
 ### Suggested Extension
 
-To further extend control over coding style of your stylesheets, you can also
+👉 To further extend control over coding style of your stylesheets, you can also
 check for rules order using
 [stylelint-order](https://github.com/hudochenkov/stylelint-order) plugin along
 with our config
