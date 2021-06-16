@@ -8,7 +8,7 @@ module.exports = {
     // (Disable ESlint as we intentionally break alphabetical order rule here.)
     'at-rule-no-vendor-prefix': true, // eslint-disable-line sort-keys
     'declaration-no-important': true,
-    'declaration-property-value-blacklist': [
+    'declaration-property-value-disallowed-list': [
       {
         '/^background/': [
           'http:',
@@ -23,7 +23,7 @@ module.exports = {
       },
       {
         message: 'Transitioning all properties, absolute background URLs and `border: none` are '
-          + 'black-listed (declaration-property-value-blacklist)',
+          + 'not allowed (declaration-property-value-disallowed-list)',
       },
     ],
     'font-family-name-quotes': 'always-where-recommended',
