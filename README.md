@@ -1,10 +1,9 @@
 # stylelint-config-visionapps
 
 [![npm version](http://img.shields.io/npm/v/@visionappscz/stylelint-config-visionapps.svg)](https://www.npmjs.org/package/@visionappscz/stylelint-config-visionapps)
-[![Build Status](https://github.com/visionappscz/stylelint-config-visionapps/workflows/test/badge.svg)](https://github.com/visionappscz/stylelint-config-visionapps/actions)
-[![dependency Status](https://david-dm.org/visionappscz/stylelint-config-visionapps/status.svg)](https://david-dm.org/visionappscz/stylelint-config-visionapps)
-[![peerDependency Status](https://david-dm.org/visionappscz/stylelint-config-visionapps/peer-status.svg)](https://david-dm.org/visionappscz/stylelint-config-visionapps?type=peer)
-[![devDependency Status](https://david-dm.org/visionappscz/stylelint-config-visionapps/dev-status.svg)](https://david-dm.org/visionappscz/stylelint-config-visionapps?type=dev)
+[![Build Status](https://github.com/visionappscz/stylelint-config-visionapps/workflows/Build%20and%20run%20tests/badge.svg)](https://github.com/visionappscz/stylelint-config-visionapps/actions)
+![dependencies Status](https://img.shields.io/david/visionappscz/stylelint-config-visionapps)
+![devDependencies Status](https://img.shields.io/david/dev/visionappscz/stylelint-config-visionapps)
 [![Downloads per month](https://img.shields.io/npm/dm/@visionappscz/stylelint-config-visionapps.svg?style=flat)](https://npmcharts.com/compare/@visionappscz/stylelint-config-visionapps)
 
 > VisionApps' shareable config for [Stylelint](https://github.com/stylelint/stylelint).
