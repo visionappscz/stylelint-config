@@ -14,15 +14,12 @@ module.exports = {
           'http:',
           'https:',
         ],
-        '/^border/': [
-          'none',
-        ],
         '/^transition/': [
           '/all/',
         ],
       },
       {
-        message: 'Transitioning all properties, absolute background URLs and `border: none` are '
+        message: 'Transitioning all properties and absolute background URLs are '
           + 'not allowed (declaration-property-value-disallowed-list)',
       },
     ],
