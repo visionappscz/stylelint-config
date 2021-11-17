@@ -19,7 +19,8 @@
   "homepage": "https://github.com/visionappscz/stylelint-config-visionapps#readme",
   "main": "index.js",
   "files": [
-    "index.js"
+    "index.js",
+    "order.js"
   ],
   "engines": {
     "node": ">=14",
@@ -27,7 +28,9 @@
   },
   "scripts": {
     "lint": "npm run lint:js && npm run lint:css",
-    "lint:css": "stylelint --config index.js __tests__/css-valid.css",
+    "lint:css": "npm run lint:css:main && npm run lint:css:order",
+    "lint:css:main": "stylelint --config index.js __tests__/css-valid.css",
+    "lint:css:order": "stylelint --config order.js __tests__/css-valid.css",
     "lint:js": "eslint . --ignore-path .gitignore",
     "pretest": "npm run lint",
     "test": "jest",
@@ -37,7 +40,8 @@
     "stylelint": "^14.0.0"
   },
   "dependencies": {
-    "stylelint-config-standard": "^24.0.0"
+    "stylelint-config-standard": "^24.0.0",
+    "stylelint-order": "^5.0.0"
   },
   "devDependencies": {
     "@visionappscz/eslint-config-visionapps": "^1.5.0",
