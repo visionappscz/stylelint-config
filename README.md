@@ -32,13 +32,19 @@ Apply the config in your Stylelint config:
 }
 ```
 
-### Suggested Extension
+### Checking Properties Order
 
-👉 To further extend control over coding style of your stylesheets, you can also
-check for rules order using
-[stylelint-order](https://github.com/hudochenkov/stylelint-order) plugin along
-with our config
-[@visionappscz/stylelint-config-visionapps-order](https://github.com/visionappscz/stylelint-config-visionapps-order).
+To further extend control over coding style of your stylesheets, you can also
+check for properties order:
+
+```json
+{
+  "extends": [
+    "@visionappscz/stylelint-config-visionapps",
+    "@visionappscz/stylelint-config-visionapps/order"
+  ]
+}
+```
 
 ## Known Gotchas
 
