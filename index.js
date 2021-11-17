@@ -46,6 +46,7 @@ module.exports = {
     ],
     'selector-no-qualifying-type': true,
     'selector-no-vendor-prefix': true,
+    'string-quotes': 'single',
     'value-no-vendor-prefix': true,
   },
 };

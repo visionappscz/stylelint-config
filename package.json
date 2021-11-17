@@ -25,24 +25,29 @@
     "node": ">=14",
     "npm": ">=6"
   },
-  "dependencies": {
-    "stylelint-config-standard": "^22.0.0"
-  },
-  "devDependencies": {
-    "@visionappscz/eslint-config-visionapps": "^1.5.0",
-    "eslint": "^7.28.0",
-    "eslint-plugin-import": "^2.23.4",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-react": "^7.24.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "jest": "^27.0.4",
-    "stylelint": "^13.13.1"
-  },
   "scripts": {
-    "lint": "eslint . --ignore-path .gitignore",
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:css": "stylelint --config index.js __tests__/css-valid.css",
+    "lint:js": "eslint . --ignore-path .gitignore",
     "pretest": "npm run lint",
     "test": "jest",
     "watch": "jest --watch"
+  },
+  "peerDependencies": {
+    "stylelint": "^14.0.0"
+  },
+  "dependencies": {
+    "stylelint-config-standard": "^24.0.0"
+  },
+  "devDependencies": {
+    "@visionappscz/eslint-config-visionapps": "^1.5.0",
+    "eslint": "^8.2.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "jest": "^27.3.1",
+    "stylelint": "^14.1.0"
   },
   "eslintConfig": {
     "extends": [
