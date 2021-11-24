@@ -2,24 +2,22 @@
 
 [![npm version](http://img.shields.io/npm/v/@visionappscz/stylelint-config-visionapps.svg)](https://www.npmjs.org/package/@visionappscz/stylelint-config-visionapps)
 [![Build Status](https://github.com/visionappscz/stylelint-config-visionapps/workflows/Build%20and%20run%20tests/badge.svg)](https://github.com/visionappscz/stylelint-config-visionapps/actions)
-![dependencies Status](https://img.shields.io/david/visionappscz/stylelint-config-visionapps)
-![devDependencies Status](https://img.shields.io/david/dev/visionappscz/stylelint-config-visionapps)
 [![Downloads per month](https://img.shields.io/npm/dm/@visionappscz/stylelint-config-visionapps.svg?style=flat)](https://npmcharts.com/compare/@visionappscz/stylelint-config-visionapps)
 
-> VisionApps' shareable config for [Stylelint](https://github.com/stylelint/stylelint).
+> VisionApps' shareable config for [Stylelint].
 
-Extends [stylelint-config-standard](https://github.com/stylelint/stylelint-config-standard)
-with more strict rules and giving preference to indentation with 4 spaces.
+Extends [stylelint-config-standard] with more strict rules and giving
+preference to indentation with 4 spaces.
 
 To see the rules that this config uses, please read the
 [config itself](./index.js).
 
 ## Installation
 
-Install [Stylelint](https://github.com/stylelint/stylelint) and this config:
+Install [Stylelint] and this config:
 
 ```bash
-$ npm install --save-dev @visionappscz/stylelint-config-visionapps
+$ npm install --save-dev stylelint @visionappscz/stylelint-config-visionapps
 ```
 
 ## Usage
@@ -46,50 +44,30 @@ check for properties order:
 }
 ```
 
+To see the properties order that this config prescribes, please read the
+[`order` config itself](./order.js).
 
+## Usage with SCSS
 
-
-## Usage with SCSS Syntax
-
-The config is broadly compatible with SCSS syntax. You will only need to adjust
-the rule that checks at rules:
+To lint SCSS files (i.e. `*.scss`, not `*.sass`), add one more config that
+extends [stylelint-config-standard-scss] and fixes its incompatibilities with
+our main config:
 
 ```json
 {
-  "extends": "@visionappscz/stylelint-config-visionapps",
-  "rules": {
-    "at-rule-no-unknown": [
-      true, {
-        "ignoreAtRules": [
-          "at-root",
-          "content",
-          "debug",
-          "each",
-          "else",
-          "else if",
-          "error",
-          "extend",
-          "for",
-          "forward",
-          "function",
-          "if",
-          "include",
-          "mixin",
-          "return",
-          "use",
-          "warn",
-          "while"
-        ]
-      }
-    ]
-  }
+  "extends": [
+    "@visionappscz/stylelint-config-visionapps",
+    "@visionappscz/stylelint-config-visionapps/order",
+    "@visionappscz/stylelint-config-visionapps/scss"
+  ]
 }
 ```
 
-To go even further, you can check SCSS specific rules with
-[stylelint-scss](https://github.com/kristerkari/stylelint-scss) plugin.
+⚠️ Please mind the order of extended configurations, `scss` must come last.
 
-There is also
-[stylelint-config-recommended-scss](https://github.com/kristerkari/stylelint-config-recommended-scss)
-which
-[disables check of at rules entirely](https://github.com/kristerkari/stylelint-config-recommended-scss/blob/master/index.js).
+To see the rules that this config uses, please read the
+[`scss` config itself](./scss.js).
+
+[Stylelint]: https://github.com/stylelint/stylelint
+[stylelint-config-standard]: https://github.com/stylelint/stylelint-config-standard
+[stylelint-config-standard-scss]: https://github.com/stylelint-scss/stylelint-config-standard-scss
