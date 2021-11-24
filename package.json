@@ -20,7 +20,8 @@
   "main": "index.js",
   "files": [
     "index.js",
-    "order.js"
+    "order.js",
+    "scss.js"
   ],
   "engines": {
     "node": ">=14",
@@ -28,9 +29,10 @@
   },
   "scripts": {
     "lint": "npm run lint:js && npm run lint:css",
-    "lint:css": "npm run lint:css:main && npm run lint:css:order",
+    "lint:css": "npm run lint:css:main && npm run lint:css:order && npm run lint:css:scss",
     "lint:css:main": "stylelint --config index.js __tests__/css-valid.css",
     "lint:css:order": "stylelint --config order.js __tests__/css-valid.css",
+    "lint:css:scss": "stylelint --config scss.js __tests__/scss-valid.scss",
     "lint:js": "eslint . --ignore-path .gitignore",
     "pretest": "npm run lint",
     "test": "jest",
@@ -41,11 +43,12 @@
   },
   "dependencies": {
     "stylelint-config-standard": "^24.0.0",
+    "stylelint-config-standard-scss": "^3.0.0",
     "stylelint-order": "^5.0.0"
   },
   "devDependencies": {
     "@visionappscz/eslint-config-visionapps": "^1.5.0",
-    "eslint": "^8.2.0",
+    "eslint": "^8.3.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.27.1",
