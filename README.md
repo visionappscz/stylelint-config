@@ -46,20 +46,8 @@ check for properties order:
 }
 ```
 
-## Known Gotchas
 
-- **A unit must be present inside `calc()` expressions even with zero-length
-  values.** This config disallows using a unit for zero-length values which
-  is useful most of the time so we recommend throwing a
-  `stylelint-disable length-zero-no-unit` comment to suppress this rule when
-  necessary.
 
-- **Max line length is exceeded with inline data URIs.** You may need to turn
-  this rule off with `stylelint-disable max-line-length`.
-
-Head to
-[Styleint docs](https://github.com/stylelint/stylelint/blob/master/docs/user-guide/ignore-code.md)
-to see how to ignore code fragments during lint.
 
 ## Usage with SCSS Syntax
 
