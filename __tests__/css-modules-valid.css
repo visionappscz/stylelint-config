@@ -1,0 +1,7 @@
+.className {
+    padding: 1rem;
+}
+
+:global(.globalClassName) {
+    padding: 2rem;
+}

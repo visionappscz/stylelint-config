@@ -6,11 +6,13 @@
 
 > VisionApps' shareable config for [Stylelint].
 
-Extends [stylelint-config-standard] with more strict rules and giving
-preference to indentation with 4 spaces.
+- It extends [stylelint-config-standard],
+- adds **more strict rules**,
+- gives preference to indentation with **4 spaces** instead of 2,
+- contains additional configs for **SCSS** and **CSS Modules**.
 
 To see the rules that this config uses, please read the
-[config itself](./index.js).
+[main config itself](./index.js).
 
 ## Installation
 
@@ -30,7 +32,7 @@ Apply the config in your Stylelint config:
 }
 ```
 
-### Checking Properties Order
+### Optional: Checking Properties Order
 
 To further extend control over coding style of your stylesheets, you can also
 check for properties order:
@@ -44,12 +46,16 @@ check for properties order:
 }
 ```
 
+👉 `order` config is entirely independent on the main config and thus can be
+listed anywhere in the `extends` section of your config. However, that's not the
+case with our other extending configs.
+
 To see the properties order that this config prescribes, please read the
 [`order` config itself](./order.js).
 
 ## Usage with SCSS
 
-To lint SCSS files (i.e. `*.scss`, not `*.sass`), add one more config that
+To lint SCSS files (i.e. `*.scss`, not `*.sass`), add the `scss` config that
 extends [stylelint-config-standard-scss] and fixes its incompatibilities with
 our main config:
 
@@ -57,17 +63,76 @@ our main config:
 {
   "extends": [
     "@visionappscz/stylelint-config-visionapps",
-    "@visionappscz/stylelint-config-visionapps/order",
     "@visionappscz/stylelint-config-visionapps/scss"
   ]
 }
 ```
 
-⚠️ Please mind the order of extended configurations, `scss` must come last.
+⚠️ Please mind the order of extended configurations, `scss` config must come
+**after the main config.**
 
 To see the rules that this config uses, please read the
 [`scss` config itself](./scss.js).
 
+## Usage with CSS Modules
+
+To lint CSS files in project that leverages [CSS Modules], drop in the
+`cssModules` config that fixes key incompatibilities of CSS Modules syntax with
+the main config:
+
+```json
+{
+  "extends": [
+    "@visionappscz/stylelint-config-visionapps",
+    "@visionappscz/stylelint-config-visionapps/cssModules"
+  ]
+}
+```
+
+Or along with SCSS:
+
+```json
+{
+  "extends": [
+    "@visionappscz/stylelint-config-visionapps",
+    "@visionappscz/stylelint-config-visionapps/scss",
+    "@visionappscz/stylelint-config-visionapps/cssModules"
+  ]
+}
+```
+
+⚠️ Please mind the order of extended configurations, `cssModules` must come
+**after the main config,** or **after the `scss` config,** if present.
+
+⚠️ **Only essential features of CSS Modules are recognized by this config.**
+Namely, just camelCase notation for class names and `:global` pseudo selectors
+are covered. All other features of CSS Modules (like `composes`, `:local`, or
+`@value`) are considered non-essential as they can be implemented with Sass
+(which we encourage) and thus are not recognized by this config.
+
+To see the rules that this config uses, please read the
+[`cssModules` config itself](./cssModules.js).
+
+ℹ️ There is a popular [stylelint-config-css-modules] config that recognizes all
+features of CSS Modules.
+
+## Full Example
+
+Example of all configs combined:
+
+```json
+{
+  "extends": [
+    "@visionappscz/stylelint-config-visionapps",
+    "@visionappscz/stylelint-config-visionapps/order",
+    "@visionappscz/stylelint-config-visionapps/scss",
+    "@visionappscz/stylelint-config-visionapps/cssModules"
+  ]
+}
+```
+
 [Stylelint]: https://github.com/stylelint/stylelint
 [stylelint-config-standard]: https://github.com/stylelint/stylelint-config-standard
 [stylelint-config-standard-scss]: https://github.com/stylelint-scss/stylelint-config-standard-scss
+[CSS Modules]: https://github.com/css-modules/css-modules
+[stylelint-config-css-modules]: https://github.com/pascalduez/stylelint-config-css-modules
