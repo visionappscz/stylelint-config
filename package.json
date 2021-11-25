@@ -19,6 +19,7 @@
   "homepage": "https://github.com/visionappscz/stylelint-config-visionapps#readme",
   "main": "index.js",
   "files": [
+    "cssModules.js",
     "index.js",
     "order.js",
     "scss.js"
@@ -29,10 +30,11 @@
   },
   "scripts": {
     "lint": "npm run lint:js && npm run lint:css",
-    "lint:css": "npm run lint:css:main && npm run lint:css:order && npm run lint:css:scss",
+    "lint:css": "npm run lint:css:main && npm run lint:css:order && npm run lint:css:scss && npm run lint:css:cssModules",
     "lint:css:main": "stylelint --config index.js __tests__/css-valid.css",
     "lint:css:order": "stylelint --config order.js __tests__/css-valid.css",
     "lint:css:scss": "stylelint --config scss.js __tests__/scss-valid.scss",
+    "lint:css:cssModules": "stylelint --config cssModules.js __tests__/css-modules-valid.css",
     "lint:js": "eslint . --ignore-path .gitignore",
     "pretest": "npm run lint",
     "test": "jest",
