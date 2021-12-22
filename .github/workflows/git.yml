@@ -1,4 +1,4 @@
-name: Git Checks
+name: Git checks
 
 on: [pull_request]
 
@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-      - name: Block Merge with Autosquash Commits
+      - name: Block merge with autosquash commits
         uses: xt0rted/block-autosquash-commits-action@v2.0.0
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
