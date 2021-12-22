@@ -1,4 +1,4 @@
-name: Pull Request Meta
+name: Pull request meta
 
 on:
   pull_request:
