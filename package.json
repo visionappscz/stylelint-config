@@ -41,7 +41,7 @@
     "watch": "jest --watch"
   },
   "peerDependencies": {
-    "stylelint": "^14.0.0"
+    "stylelint": "^14.2.0"
   },
   "dependencies": {
     "stylelint-config-standard": "^24.0.0",
@@ -50,12 +50,12 @@
   },
   "devDependencies": {
     "@visionappscz/eslint-config-visionapps": "^1.5.0",
-    "eslint": "^8.3.0",
+    "eslint": "^8.5.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "jest": "^27.3.1",
+    "jest": "^27.4.5",
     "stylelint": "^14.1.0"
   },
   "eslintConfig": {
