@@ -1,11 +1,11 @@
-# @visionappscz/stylelint-config-visionapps
+# @visionappscz/stylelint-config
 
-[![npm version](https://img.shields.io/npm/v/@visionappscz/stylelint-config-visionapps?label=npm%20package&logo=npm)](https://www.npmjs.org/package/@visionappscz/stylelint-config-visionapps)
-[![Node version](https://img.shields.io/node/v/@visionappscz/stylelint-config-visionapps.svg?style=flat&logo=nodedotjs)](http://nodejs.org/download/)
-[![Stylelint version](https://img.shields.io/npm/dependency-version/@visionappscz/stylelint-config-visionapps/peer/stylelint?logo=stylelint)][Stylelint]
-[![Build status](https://github.com/visionappscz/stylelint-config-visionapps/workflows/Build%20and%20test/badge.svg)](https://github.com/visionappscz/stylelint-config-visionapps/actions)
-[![Downloads per month](https://img.shields.io/npm/dm/@visionappscz/stylelint-config-visionapps.svg?style=flat)](https://npmcharts.com/compare/@visionappscz/stylelint-config-visionapps)
-[![HitCount](http://hits.dwyl.com/@visionappscz/stylelint-config-visionapps.svg?style=flat)](http://hits.dwyl.com/@visionappscz/stylelint-config-visionapps)
+[![npm version](https://img.shields.io/npm/v/@visionappscz/stylelint-config?label=npm%20package&logo=npm)](https://www.npmjs.org/package/@visionappscz/stylelint-config)
+[![Node version](https://img.shields.io/node/v/@visionappscz/stylelint-config.svg?style=flat&logo=nodedotjs)](http://nodejs.org/download/)
+[![Stylelint version](https://img.shields.io/npm/dependency-version/@visionappscz/stylelint-config/peer/stylelint?logo=stylelint)][Stylelint]
+[![Build status](https://github.com/visionappscz/stylelint-config/workflows/Build%20and%20test/badge.svg)](https://github.com/visionappscz/stylelint-config/actions)
+[![Downloads per month](https://img.shields.io/npm/dm/@visionappscz/stylelint-config.svg?style=flat)](https://npmcharts.com/compare/@visionappscz/stylelint-config)
+[![HitCount](http://hits.dwyl.com/@visionappscz/stylelint-config.svg?style=flat)](http://hits.dwyl.com/@visionappscz/stylelint-config)
 
 VisionApps' shareable collection of configs for [Stylelint]:
 
@@ -19,7 +19,7 @@ VisionApps' shareable collection of configs for [Stylelint]:
 Install [Stylelint] and this config:
 
 ```bash
-$ npm install --save-dev stylelint @visionappscz/stylelint-config-visionapps
+$ npm install --save-dev stylelint @visionappscz/stylelint-config
 ```
 
 ## Basic Usage
@@ -28,7 +28,7 @@ Apply the config in your Stylelint config:
 
 ```json
 {
-  "extends": "@visionappscz/stylelint-config-visionapps"
+  "extends": "@visionappscz/stylelint-config"
 }
 ```
 
@@ -43,8 +43,8 @@ check for properties order:
 ```json
 {
   "extends": [
-    "@visionappscz/stylelint-config-visionapps",
-    "@visionappscz/stylelint-config-visionapps/order"
+    "@visionappscz/stylelint-config",
+    "@visionappscz/stylelint-config/order"
   ]
 }
 ```
@@ -78,8 +78,8 @@ main config, and overrides some rules to better work with complex stylesheets:
 ```json
 {
   "extends": [
-    "@visionappscz/stylelint-config-visionapps",
-    "@visionappscz/stylelint-config-visionapps/scss"
+    "@visionappscz/stylelint-config",
+    "@visionappscz/stylelint-config/scss"
   ]
 }
 ```
@@ -99,8 +99,8 @@ the main config:
 ```json
 {
   "extends": [
-    "@visionappscz/stylelint-config-visionapps",
-    "@visionappscz/stylelint-config-visionapps/cssModules"
+    "@visionappscz/stylelint-config",
+    "@visionappscz/stylelint-config/cssModules"
   ]
 }
 ```
@@ -110,9 +110,9 @@ Or along with SCSS:
 ```json
 {
   "extends": [
-    "@visionappscz/stylelint-config-visionapps",
-    "@visionappscz/stylelint-config-visionapps/scss",
-    "@visionappscz/stylelint-config-visionapps/cssModules"
+    "@visionappscz/stylelint-config",
+    "@visionappscz/stylelint-config/scss",
+    "@visionappscz/stylelint-config/cssModules"
   ]
 }
 ```
@@ -139,10 +139,10 @@ Example of all configs combined:
 ```json
 {
   "extends": [
-    "@visionappscz/stylelint-config-visionapps",
-    "@visionappscz/stylelint-config-visionapps/order",
-    "@visionappscz/stylelint-config-visionapps/scss",
-    "@visionappscz/stylelint-config-visionapps/cssModules"
+    "@visionappscz/stylelint-config",
+    "@visionappscz/stylelint-config/order",
+    "@visionappscz/stylelint-config/scss",
+    "@visionappscz/stylelint-config/cssModules"
   ]
 }
 ```
@@ -158,7 +158,7 @@ Just override the `indentation` rule in your Stylelint config:
 
 ```json
 {
-  "extends": "@visionappscz/stylelint-config-visionapps",
+  "extends": "@visionappscz/stylelint-config",
   "rules": {
     "indentation": 2
   }
