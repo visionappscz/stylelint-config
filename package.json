@@ -1,6 +1,6 @@
 {
   "name": "@visionappscz/stylelint-config",
-  "version": "3.0.0-rc1",
+  "version": "3.0.0",
   "description": "VisionApps' shareable config for stylelint",
   "keywords": [
     "stylelint",
