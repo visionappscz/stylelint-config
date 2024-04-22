@@ -25,8 +25,7 @@
     "scss.js"
   ],
   "engines": {
-    "node": ">=18",
-    "npm": ">=10"
+    "node": ">=18.12.0"
   },
   "scripts": {
     "lint": "npm run lint:js && npm run lint:css",
@@ -35,18 +34,19 @@
     "lint:css:order": "stylelint --config order.js __tests__/css-valid.css",
     "lint:css:scss": "stylelint --config scss.js __tests__/scss-valid.scss",
     "lint:css:cssModules": "stylelint --config cssModules.js __tests__/css-modules-valid.css",
-    "lint:js": "eslint . --ignore-path .gitignore",
+    "lint:js": "npm run lint:js:configs && npm run lint:js:tests",
+    "lint:js:configs": "eslint --ext .js .",
+    "lint:js:tests": "eslint --ext .mjs __tests__",
     "pretest": "npm run lint",
-    "test": "jest",
-    "watch": "jest --watch"
+    "test": "node --test"
   },
   "peerDependencies": {
-    "stylelint": "^14.3.0"
+    "stylelint": "^16.1.0"
   },
   "dependencies": {
-    "stylelint-config-standard": "^24.0.0",
-    "stylelint-config-standard-scss": "^3.0.0",
-    "stylelint-order": "^5.0.0"
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-config-standard-scss": "^13.1.0",
+    "stylelint-order": "^6.0.4"
   },
   "devDependencies": {
     "@visionappscz/eslint-config-visionapps": "^1.7.0",
@@ -55,8 +55,7 @@
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "jest": "^29.7.0",
-    "stylelint": "^14.3.0"
+    "stylelint": "^16.1.0"
   },
   "eslintConfig": {
     "extends": [
@@ -64,12 +63,7 @@
     ],
     "env": {
       "es6": true,
-      "node": true,
-      "jest": true
+      "node": true
     }
-  },
-  "jest": {
-    "testEnvironment": "node",
-    "verbose": true
   }
 }

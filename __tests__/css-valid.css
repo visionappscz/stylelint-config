@@ -1,5 +1,15 @@
-@import url("x.css");
-@import url("y.css");
+/*
+  Based on https://github.com/stylelint/stylelint-config-standard/blob/36.0.0/__tests__/valid.css
+  with modifications:
+
+  - order properties according to `order.js`,
+  - flag ID selectors.
+*/
+
+@import url('foo.css');
+@import url('bar.css');
+
+@custom-media --foo (min-width: 30em);
 
 /**
  * Multi-line comment
@@ -9,71 +19,38 @@
     --brand-red: hsl(5deg 10% 40%);
 }
 
-.selector-1,
-.selector-2,
-.selector-3[type="text"] {
-    display: block;
-    box-sizing: border-box;
-    color: var(--brand-red);
-    background: linear-gradient(#fff, rgb(0 0 0 / 80%));
-}
-
-.selector-a,
-.selector-b:not(:first-child) {
-    top: calc(100% - 2rem + 0px);
-    padding: 10px;
-}
-
-.selector-x { width: 10%; }
-.selector-y { width: 20%; }
-.selector-z { width: 30%; }
-
 /* Single-line comment */
 
-@media (width >= 60em) {
-    .selector {
-        /* Flush to parent comment */
-        transform: translate(1, 1) scale(3);
-    }
-}
-
-@media (orientation: portrait), projection and (color) {
-    .selector-i + .selector-ii {
-        font-family: Helvetica, "Arial Black", sans-serif;
-        background: hsl(20deg 25% 33%);
-    }
+.class-foo:not(a, div) {
+    top: calc(100% - 2rem);
+    margin: 0;
 }
 
 /* Flush single line comment */
-@media
-    screen and (min-resolution: 192dpi),
-    screen and (min-resolution: 2dppx) {
-    .selector {
-        height: 10rem;
-        margin: 10px;
-        margin-bottom: 5px;
-        background-image:
-            repeating-linear-gradient(
-                -45deg,
-                transparent,
-                #fff 25px,
-                rgb(255 255 255 / 100%) 50px
-            );
-        box-shadow:
-            0 1px 1px #000,
-            0 1px 0 #fff,
-            2px 2px 1px 1px #ccc inset;
-        animation: 3s none fade-in;
+@media (width >= 60em) {
+    .class-foo {
+        /* Flush to parent comment */
+        --offset: 0px;
+
+        left: calc(var(--offset) + 50%);
+        font-family: Helvetica, 'Arial Black', sans-serif;
+        color: #fff;
     }
 
     /* Flush nested single line comment */
-    .selector::after {
-        content: "→";
-        background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/></svg>");
+    a::after {
+        content: '→';
+        display: block;
+        background-image: url('x.svg');
     }
 }
 
 @keyframes fade-in {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }

@@ -1,3 +1,19 @@
-.element {
-    color: #000 !important;
+/* Based on https://github.com/stylelint/stylelint-config-standard/blob/36.0.0/__tests__/valid.css */
+
+@custom-media --FOO;
+
+:root {
+    --FOO: 1px;
+}
+
+@keyframes FOO {
+    /* ... */
+}
+
+.FOO {
+    /* ... */
+}
+
+#FOO {
+    /* ... */
 }
