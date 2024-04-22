@@ -2,13 +2,7 @@ module.exports = {
   extends: 'stylelint-config-standard',
   rules: {
 
-    // Disable ESlint as we intentionally break alphabetical order rule here.
-    /* eslint-disable sort-keys */
-
-    // Override `stylelint-config-standard`:
-    indentation: 4, // Long lines are rare in CSS so we can afford bigger indentation.
-
-    // Extend with more strict rules:
+    // Add more strict rules:
     'declaration-no-important': true, // Except for utility classes and third-party overrides, !important can be avoided.
     'declaration-property-value-disallowed-list': [
       {
@@ -35,7 +29,5 @@ module.exports = {
     'selector-max-specificity': '0,4,0', // Keep selector specificity as low as possible by default.
     'selector-max-universal': 0, // Most of the time, we should know what elements or classes we are targeting.
     'selector-no-qualifying-type': true, // In most cases, it only needlessly increases selector specificity.
-
-    /* eslint-enable sort-keys */
   },
 };

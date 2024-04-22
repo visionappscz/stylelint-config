@@ -1,9 +1,13 @@
+// Based on https://github.com/stylelint-scss/stylelint-config-standard-scss/blob/v13.1.0/__tests__/valid.scss
+
+@forward "something";
 @use "base";
 @use "sass:list";
 @use "sass:map";
 @use "sass:math";
 @use "sass:meta";
 @use "sass:string";
+@import "something-else";
 
 // Multi-line double-slash comment
 // comment
@@ -87,10 +91,10 @@ $theme-colors: (
     background: linear-gradient(#fff, rgb(0 0 0 / 80%));
     color: base.$primary-color;
     top: calc(100% - 2rem) !important;
+}
 
-    &::after {
-        width: math.div(300px, 960px) * 100%;
-    }
+a {
+    width: math.div(300px, 960px) * 100%;
 }
 
 .selector-x { width: 10%; }
@@ -108,7 +112,7 @@ $theme-colors: (
 
 /* Single-line comment */
 
-@media (min-width: 60em) {
+@media (width >= 60em) {
     .selector {
         // Flush to parent comment
         @include corner-icon("mail", top, left);
@@ -123,22 +127,22 @@ $theme-colors: (
         @include triangle(5px, black, right);
 
         background: hsl(20deg 25% 33%);
+    }
 
-        &:first-child {
-            @function contains-helvetica($string) {
-                @return string.index($string, "Helvetica");
-            }
-
-            font-family: remove-where($fonts, meta.get-function("contains-helvetica"));
+    .selector-j {
+        @function contains-helvetica($string) {
+            @return string.index($string, "Helvetica");
         }
+
+        font-family: remove-where($fonts, meta.get-function("contains-helvetica"));
     }
 }
 
 // Multi-line double-slash comment
 // comment
 @media
-    screen and (min-resolution: 192dpi),
-    screen and (min-resolution: 2dppx) {
+screen and (resolution >= 192dpi),
+screen and (resolution >= 2dppx) {
     .selector {
         background-image:
             repeating-linear-gradient(
@@ -162,3 +166,9 @@ $theme-colors: (
     from { opacity: 0; }
     to { opacity: 1; }
 }
+
+$ratios:
+    5 4,
+    4 3,
+    3 2,
+    16 9;

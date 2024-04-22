@@ -5,14 +5,11 @@
 [![Stylelint version](https://img.shields.io/npm/dependency-version/@visionappscz/stylelint-config/peer/stylelint?logo=stylelint)][Stylelint]
 [![Build status](https://github.com/visionappscz/stylelint-config/workflows/Build%20and%20test/badge.svg)](https://github.com/visionappscz/stylelint-config/actions)
 [![Downloads per month](https://img.shields.io/npm/dm/@visionappscz/stylelint-config.svg?style=flat)](https://npmcharts.com/compare/@visionappscz/stylelint-config)
-[![HitCount](http://hits.dwyl.com/@visionappscz/stylelint-config.svg?style=flat)](http://hits.dwyl.com/@visionappscz/stylelint-config)
 
-VisionApps' shareable collection of configs for [Stylelint]:
+VisionApps' collection of shareable configs for [Stylelint]:
 
-- extends [stylelint-config-standard],
-- adds rules to **encourage low specificity** and **avoid nesting**,
-- gives preference to indentation of **4 spaces** instead of 2,
-- includes additional configs for **SCSS** and **CSS Modules**.
+- extends [stylelint-config-standard] with rules to **encourage low specificity** and **avoid nesting**,
+- includes additional configs for checking **order**, **SCSS** and **CSS Modules**.
 
 ## Installation
 
@@ -32,7 +29,7 @@ Apply the config in your Stylelint config:
 }
 ```
 
-To see the rules that this config uses, please read the
+👉 To see the rules that this config uses, please read the
 [main config itself](./index.js).
 
 ### Optional: Checking Properties Order
@@ -62,7 +59,7 @@ The `order` config enforces properties order given by following categories:
 9. interactions,
 10. transitions and animations.
 
-To see the order of individual properties this config prescribes, please read
+👉 To see the order of individual properties this config prescribes, please read
 the [`order` config itself](./order.js).
 
 👉 `order` config is entirely independent on the main config and thus can be
@@ -87,7 +84,7 @@ main config, and overrides some rules to better work with complex stylesheets:
 ⚠️ Please mind the order of extended configurations, `scss` config must come
 **after the main config.**
 
-To see the rules that this config uses, please read the
+👉 To see the rules that this config uses, please read the
 [`scss` config itself](./scss.js).
 
 ## Usage with CSS Modules
@@ -126,11 +123,29 @@ are covered. **All other features** of CSS Modules (like `composes`, `:local`,
 `@value`, etc.) are considered non-essential as they can be implemented with
 Sass (which we encourage) and thus **are not recognized** by this config.
 
-To see the rules that this config uses, please read the
+👉 To see the rules that this config uses, please read the
 [`cssModules` config itself](./cssModules.js).
 
 ℹ️ There is a popular [stylelint-config-css-modules] config that recognizes all
 features of CSS Modules.
+
+## Stylistic Rules
+
+Stylistic rules (like indentation etc.) [were dropped][stylelint-v16-stylistic-rules]
+in Stylelint v16. If you need to enforce them, you can use
+[`@stylistic/stylelint-config`][stylistic-config]:
+
+```json
+{
+  "extends": [
+    "@visionappscz/stylelint-config",
+    "@stylistic/stylelint-config"
+  ]
+}
+```
+
+Or, if you feel brave enough and don't need granular configuration of the stylistic rules,
+you can use [Prettier].
 
 ## Full Example
 
@@ -142,7 +157,8 @@ Example of all configs combined:
     "@visionappscz/stylelint-config",
     "@visionappscz/stylelint-config/order",
     "@visionappscz/stylelint-config/scss",
-    "@visionappscz/stylelint-config/cssModules"
+    "@visionappscz/stylelint-config/cssModules",
+    "@stylistic/stylelint-config"
   ]
 }
 ```
@@ -151,19 +167,45 @@ Example of all configs combined:
 
 <details>
   <summary>
-      I want indentation of 2 spaces. How do I change it?
+    How do I change the indentation?
   </summary>
 
-Just override the `indentation` rule in your Stylelint config:
+### With Stylistic
+
+If using the `@stylistic` plugin, just override the `@stylistic/indentation` rule in your Stylelint config:
 
 ```json
 {
-  "extends": "@visionappscz/stylelint-config",
+  "extends": [
+    "@visionappscz/stylelint-config",
+    "@stylistic/stylelint-config"
+  ],
   "rules": {
-    "indentation": 2
+    "@stylistic/indentation": 2
   }
 }
 ```
+
+👉 See the [`@stylistic/stylelint-config`][stylistic-config] documentation for more options.
+
+### With Prettier
+
+If using Prettier, you can configure the indentation in your Prettier config:
+
+```json
+{
+  "tabWidth": 2
+}
+```
+
+Or in your [`.editorconfig`][editorconfig]:
+
+```ini
+[*]
+indent_size = 2
+```
+
+👉 See [Prettier] documentation for more options.
 </details>
 
 [Stylelint]: https://github.com/stylelint/stylelint
@@ -171,3 +213,7 @@ Just override the `indentation` rule in your Stylelint config:
 [stylelint-config-standard-scss]: https://github.com/stylelint-scss/stylelint-config-standard-scss
 [CSS Modules]: https://github.com/css-modules/css-modules
 [stylelint-config-css-modules]: https://github.com/pascalduez/stylelint-config-css-modules
+[stylelint-v16-stylistic-rules]: https://stylelint.io/migration-guide/to-16/#removed-deprecated-stylistic-rules
+[stylistic-config]: https://github.com/stylelint-stylistic/stylelint-config
+[Prettier]: https://prettier.io
+[editorconfig]: https://editorconfig.org

@@ -5,9 +5,6 @@ module.exports = {
     // Disable ESlint as we intentionally break alphabetical order rule here.
     /* eslint-disable sort-keys */
 
-    // Fix conflict of `stylelint-config-standard-scss` with our main config:
-    indentation: 4,
-
     // Turn `comment-no-empty` back on for empty CSS comments since `scss/comment-no-empty` is turned off later on:
     // https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/comment-no-empty/README.md
     'comment-no-empty': true,
