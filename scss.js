@@ -2,10 +2,9 @@ module.exports = {
   extends: 'stylelint-config-standard-scss',
   rules: {
 
-    // Disable ESlint as we intentionally break alphabetical order rule here.
-    /* eslint-disable sort-keys */
+    /* eslint-disable sort-keys -- We need to set CSS rules before SCSS rules. */
 
-    // Turn `comment-no-empty` back on for empty CSS comments since `scss/comment-no-empty` is turned off later on:
+    // Restore `comment-no-empty` of `stylelint-config-standard-scss` as per `stylelint-config-recommended`.
     // https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/comment-no-empty/README.md
     'comment-no-empty': true,
 
@@ -32,7 +31,6 @@ module.exports = {
       },
     ],
     'scss/comment-no-empty': null, // Allow empty lines in structured block comments.
-    'scss/dollar-variable-colon-space-after': 'always-single-line', // Support multi-line variable definitions.
     'scss/dollar-variable-empty-line-before': null, // Turn off to support grouping variables using empty lines.
     'scss/dollar-variable-pattern': [ // Prefer _ over - for private variables.
       '^(_?[a-z][a-z0-9]*)(-[a-z0-9]+)*$',
