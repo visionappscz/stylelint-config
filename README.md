@@ -150,9 +150,9 @@ Example of all configs combined:
 ## FAQ
 
 <details>
-    <summary>
-        I want indentation of 2 spaces. How do I change it?
-    </summary>
+  <summary>
+      I want indentation of 2 spaces. How do I change it?
+  </summary>
 
 Just override the `indentation` rule in your Stylelint config:
 
