@@ -46,7 +46,17 @@ check for properties order:
 }
 ```
 
-The `order` config enforces properties order given by following categories:
+The `order` config enforces a consistent order of content in your declaration blocks:
+
+1. Sass variables,
+2. CSS custom properties,
+3. Sass `@extend`,
+4. single-line Sass `@include`,
+5. declarations,
+6. nested rules,
+7. any other at-rules.
+
+Furthermore, properties in the declarations must be ordered by following categories:
 
 1. `all` properties,
 2. `content`,
