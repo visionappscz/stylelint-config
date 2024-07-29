@@ -1,6 +1,6 @@
 {
   "name": "@visionappscz/stylelint-config",
-  "version": "3.0.0",
+  "version": "4.0.0-beta1",
   "description": "VisionApps' shareable config for stylelint",
   "keywords": [
     "stylelint",
@@ -41,7 +41,7 @@
     "test": "node --test"
   },
   "peerDependencies": {
-    "stylelint": "^16.1.0"
+    "stylelint": "^16.0.0"
   },
   "dependencies": {
     "stylelint-config-standard": "^36.0.0",
@@ -55,7 +55,7 @@
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "stylelint": "^16.1.0"
+    "stylelint": "^16.7.0"
   },
   "eslintConfig": {
     "extends": [
