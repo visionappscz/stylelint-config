@@ -53,8 +53,10 @@ The `order` config enforces a consistent order of content in your declaration bl
 3. Sass `@extend`,
 4. single-line Sass `@include`,
 5. declarations,
-6. nested rules,
-7. any other at-rules.
+6. nested rules.
+
+For better flexibility, block at-rules (like `@media`, `@supports`, and also Sass `@if`, `@each`, etc.) can be placed
+anywhere in the declaration block.
 
 Furthermore, properties in the declarations must be ordered by following categories:
 
