@@ -17,10 +17,6 @@ module.exports = {
       },
       'declarations',
       'rules',
-      {
-        hasBlock: true,
-        type: 'at-rule',
-      },
     ],
     'order/properties-order': [
 
